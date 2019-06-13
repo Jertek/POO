@@ -41,7 +41,7 @@ public class JFLogin extends javax.swing.JFrame {
         jSeparator12 = new javax.swing.JSeparator();
         jSeparator13 = new javax.swing.JSeparator();
         jSeparator14 = new javax.swing.JSeparator();
-        Pin2 = new javax.swing.JPasswordField();
+        senha = new javax.swing.JPasswordField();
         txtApelido = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
 
@@ -95,7 +95,7 @@ public class JFLogin extends javax.swing.JFrame {
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("PIN");
+        jLabel15.setText("Senha");
         jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
         jSeparator12.setForeground(new java.awt.Color(255, 255, 255));
@@ -107,20 +107,20 @@ public class JFLogin extends javax.swing.JFrame {
         jSeparator14.setForeground(new java.awt.Color(255, 255, 255));
         jPanel3.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 100, 10));
 
-        Pin2.setBackground(new java.awt.Color(36, 47, 65));
-        Pin2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        Pin2.setForeground(new java.awt.Color(255, 255, 255));
-        Pin2.setBorder(null);
-        Pin2.setMaximumSize(new java.awt.Dimension(1, 1));
-        Pin2.setPreferredSize(new java.awt.Dimension(1, 1));
-        Pin2.setSelectionEnd(1);
-        Pin2.setSelectionStart(1);
-        Pin2.addActionListener(new java.awt.event.ActionListener() {
+        senha.setBackground(new java.awt.Color(36, 47, 65));
+        senha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        senha.setForeground(new java.awt.Color(255, 255, 255));
+        senha.setBorder(null);
+        senha.setMaximumSize(new java.awt.Dimension(1, 1));
+        senha.setPreferredSize(new java.awt.Dimension(1, 1));
+        senha.setSelectionEnd(1);
+        senha.setSelectionStart(1);
+        senha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pin2ActionPerformed(evt);
+                senhaActionPerformed(evt);
             }
         });
-        jPanel3.add(Pin2, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 100, 20));
+        jPanel3.add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 100, 20));
 
         txtApelido.setBackground(new java.awt.Color(36, 47, 65));
         txtApelido.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -179,9 +179,9 @@ public class JFLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Pin2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pin2ActionPerformed
+    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Pin2ActionPerformed
+    }//GEN-LAST:event_senhaActionPerformed
 
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
         txtNome.setText("");
@@ -232,7 +232,6 @@ public class JFLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField Pin2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -247,6 +246,7 @@ public class JFLogin extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator9;
+    private javax.swing.JPasswordField senha;
     private javax.swing.JTextField txtApelido;
     private javax.swing.JTextField txtNome;
     // End of variables declaration//GEN-END:variables
