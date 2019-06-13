@@ -44,12 +44,14 @@ public class JFLogin extends javax.swing.JFrame {
         senha = new javax.swing.JPasswordField();
         txtApelido = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        btn_cadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel3.setBackground(new java.awt.Color(36, 47, 65));
         jPanel3.setMinimumSize(new java.awt.Dimension(0, 0));
-        jPanel3.setPreferredSize(new java.awt.Dimension(809, 550));
+        jPanel3.setPreferredSize(new java.awt.Dimension(810, 550));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel4.setBackground(new java.awt.Color(1, 163, 164));
@@ -148,6 +150,11 @@ public class JFLogin extends javax.swing.JFrame {
                 txtNomeMouseClicked(evt);
             }
         });
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
         txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 txtNomeKeyPressed(evt);
@@ -155,11 +162,32 @@ public class JFLogin extends javax.swing.JFrame {
         });
         jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 270, 20));
 
+        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/checked.png"))); // NOI18N
+        jButton1.setText("Login");
+        jButton1.setMaximumSize(new java.awt.Dimension(140, 45));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
+
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_1.png"))); // NOI18N
+        btn_cadastrar.setText("Cadastrar-se");
+        btn_cadastrar.setMaximumSize(new java.awt.Dimension(140, 45));
+        btn_cadastrar.setMinimumSize(new java.awt.Dimension(140, 45));
+        btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_cadastrarActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btn_cadastrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 140, 40));
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 809, Short.MAX_VALUE)
+            .addGap(0, 810, Short.MAX_VALUE)
             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(layout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -194,6 +222,19 @@ public class JFLogin extends javax.swing.JFrame {
     private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
        
     }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
+        this.setVisible(false);
+         new JFCadastro().setVisible(true);
+    }//GEN-LAST:event_btn_cadastrarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -232,6 +273,8 @@ public class JFLogin extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btn_cadastrar;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;

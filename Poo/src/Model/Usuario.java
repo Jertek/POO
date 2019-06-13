@@ -16,17 +16,19 @@ public class Usuario {
     String email;
     String senha;
     String telefone;
+    int id;
 
     public Usuario() {
     }
 
-    public Usuario(String nome, String apelido, String endereco, String email, String senha, String telefone) {
+    public Usuario(String nome, String apelido, String endereco, String email, String senha, String telefone, int id) {
         this.nome = nome;
         this.apelido = apelido;
         this.endereco = endereco;
         this.email = email;
         this.senha = senha;
         this.telefone = telefone;
+        this.id = id;
     }
 
     public String getNome() {
@@ -75,6 +77,14 @@ public class Usuario {
 
     public void setTelefone(String telefone) {
         this.telefone = telefone;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     
