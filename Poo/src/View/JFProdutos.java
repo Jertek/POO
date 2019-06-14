@@ -27,28 +27,83 @@ public class JFProdutos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jLabel1 = new javax.swing.JLabel();
+        txtNome = new javax.swing.JTextField();
+        jSeparator12 = new javax.swing.JSeparator();
+        jLabel13 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jPanel4 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jLabel6 = new javax.swing.JLabel();
+        txtNome1 = new javax.swing.JTextField();
+        jSeparator13 = new javax.swing.JSeparator();
+        jLabel14 = new javax.swing.JLabel();
+        txtNome2 = new javax.swing.JTextField();
+        jSeparator14 = new javax.swing.JSeparator();
+        jLabel15 = new javax.swing.JLabel();
+        txtNome3 = new javax.swing.JTextField();
+        jSeparator15 = new javax.swing.JSeparator();
+        jLabel16 = new javax.swing.JLabel();
+        txtNome4 = new javax.swing.JTextField();
+        jSeparator16 = new javax.swing.JSeparator();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        txtNome.setBackground(new java.awt.Color(36, 47, 65));
+        txtNome.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtNome.setForeground(new java.awt.Color(204, 204, 204));
+        txtNome.setText("Digite Seu Nome");
+        txtNome.setBorder(null);
+        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome.setFocusCycleRoot(true);
+        txtNome.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtNome.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtNome.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNomeMouseClicked(evt);
+            }
+        });
+        txtNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNomeActionPerformed(evt);
+            }
+        });
+        txtNome.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNomeKeyPressed(evt);
+            }
+        });
+
+        jSeparator12.setForeground(new java.awt.Color(255, 255, 255));
+
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel13.setText("NOME");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jLabel1.setFont(new java.awt.Font("Dialog", 0, 24)); // NOI18N
-        jLabel1.setText("Smart Stock");
+        jPanel3.setBackground(new java.awt.Color(36, 47, 65));
+        jPanel3.setMinimumSize(new java.awt.Dimension(0, 0));
+        jPanel3.setPreferredSize(new java.awt.Dimension(810, 550));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jPanel4.setBackground(new java.awt.Color(1, 163, 164));
+        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel11.setText("Smart Stock");
+        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         jLabel2.setText("Nome do Usuario");
+        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 120, -1, -1));
 
         jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Add_icon.png"))); // NOI18N
         jButton1.setText("Adicionar Produto");
+        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
         jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Delete_Icon.png"))); // NOI18N
         jButton2.setText("Candelar");
@@ -57,72 +112,179 @@ public class JFProdutos extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
+        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
 
-        jLabel3.setText("Produto");
+        txtNome1.setBackground(new java.awt.Color(36, 47, 65));
+        txtNome1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtNome1.setForeground(new java.awt.Color(204, 204, 204));
+        txtNome1.setText("Digite o Nome do produto");
+        txtNome1.setBorder(null);
+        txtNome1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome1.setFocusCycleRoot(true);
+        txtNome1.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtNome1.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtNome1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNome1MouseClicked(evt);
+            }
+        });
+        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome1ActionPerformed(evt);
+            }
+        });
+        txtNome1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNome1KeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, 20));
 
-        jLabel4.setText("Tipo");
+        jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 270, 10));
 
-        jLabel5.setText("Quantidade");
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel14.setText("Produto");
+        jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        jLabel6.setText("Validade");
+        txtNome2.setBackground(new java.awt.Color(36, 47, 65));
+        txtNome2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtNome2.setForeground(new java.awt.Color(204, 204, 204));
+        txtNome2.setText("Digite a quantidade");
+        txtNome2.setBorder(null);
+        txtNome2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome2.setFocusCycleRoot(true);
+        txtNome2.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtNome2.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtNome2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNome2MouseClicked(evt);
+            }
+        });
+        txtNome2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome2ActionPerformed(evt);
+            }
+        });
+        txtNome2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNome2KeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtNome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 270, 20));
+
+        jSeparator14.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 270, 10));
+
+        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel15.setText("Quantidade");
+        jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
+
+        txtNome3.setBackground(new java.awt.Color(36, 47, 65));
+        txtNome3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtNome3.setForeground(new java.awt.Color(204, 204, 204));
+        txtNome3.setText("Digite a validade");
+        txtNome3.setBorder(null);
+        txtNome3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome3.setFocusCycleRoot(true);
+        txtNome3.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtNome3.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtNome3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNome3MouseClicked(evt);
+            }
+        });
+        txtNome3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome3ActionPerformed(evt);
+            }
+        });
+        txtNome3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNome3KeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtNome3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 270, 20));
+
+        jSeparator15.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 270, 10));
+
+        jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel16.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel16.setText("Validade");
+        jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
+
+        txtNome4.setBackground(new java.awt.Color(36, 47, 65));
+        txtNome4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtNome4.setForeground(new java.awt.Color(204, 204, 204));
+        txtNome4.setText("Digite o tipo de produto");
+        txtNome4.setBorder(null);
+        txtNome4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome4.setFocusCycleRoot(true);
+        txtNome4.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtNome4.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtNome4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                txtNome4MouseClicked(evt);
+            }
+        });
+        txtNome4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtNome4ActionPerformed(evt);
+            }
+        });
+        txtNome4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtNome4KeyPressed(evt);
+            }
+        });
+        jPanel4.add(txtNome4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 270, 20));
+
+        jSeparator16.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel4.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 270, 10));
+
+        jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel17.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel17.setText("Tipo");
+        jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
+
+        jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 550));
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel12.setText("Produtos");
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 30, -1, -1));
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Produto", "Quantidade", "Validade", "Tipo"
+            }
+        ));
+        jTable1.setFocusable(false);
+        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        jTable1.setRowHeight(25);
+        jTable1.setSelectionBackground(new java.awt.Color(162, 155, 254));
+        jTable1.setSelectionForeground(new java.awt.Color(45, 52, 54));
+        jTable1.setShowHorizontalLines(false);
+        jTable1.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(jTable1);
+
+        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 380, 440));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel5)
-                            .addComponent(jLabel6))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
-                            .addComponent(jTextField2)
-                            .addComponent(jTextField3)
-                            .addComponent(jTextField4))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(545, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2)
-                .addContainerGap())
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2)
-                .addGap(26, 26, 26)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 273, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
-                .addGap(36, 36, 36))
+            .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
 
         pack();
@@ -131,6 +293,66 @@ public class JFProdutos extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
+
+    private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
+        txtNome.setText("");
+    }//GEN-LAST:event_txtNomeMouseClicked
+
+    private void txtNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNomeActionPerformed
+
+    private void txtNomeKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNomeKeyPressed
+
+    }//GEN-LAST:event_txtNomeKeyPressed
+
+    private void txtNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome1MouseClicked
+        txtNome.setText("");
+    }//GEN-LAST:event_txtNome1MouseClicked
+
+    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome1ActionPerformed
+
+    private void txtNome1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome1KeyPressed
+
+    }//GEN-LAST:event_txtNome1KeyPressed
+
+    private void txtNome2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome2MouseClicked
+        txtNome.setText("");
+    }//GEN-LAST:event_txtNome2MouseClicked
+
+    private void txtNome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome2ActionPerformed
+
+    private void txtNome2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome2KeyPressed
+
+    }//GEN-LAST:event_txtNome2KeyPressed
+
+    private void txtNome3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome3MouseClicked
+        txtNome.setText("");
+    }//GEN-LAST:event_txtNome3MouseClicked
+
+    private void txtNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome3ActionPerformed
+
+    private void txtNome3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome3KeyPressed
+
+    }//GEN-LAST:event_txtNome3KeyPressed
+
+    private void txtNome4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome4MouseClicked
+        txtNome.setText("");
+    }//GEN-LAST:event_txtNome4MouseClicked
+
+    private void txtNome4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome4ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtNome4ActionPerformed
+
+    private void txtNome4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome4KeyPressed
+
+    }//GEN-LAST:event_txtNome4KeyPressed
 
     /**
      * @param args the command line arguments
@@ -170,15 +392,27 @@ public class JFProdutos extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JPanel jPanel4;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator12;
+    private javax.swing.JSeparator jSeparator13;
+    private javax.swing.JSeparator jSeparator14;
+    private javax.swing.JSeparator jSeparator15;
+    private javax.swing.JSeparator jSeparator16;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField txtNome;
+    private javax.swing.JTextField txtNome1;
+    private javax.swing.JTextField txtNome2;
+    private javax.swing.JTextField txtNome3;
+    private javax.swing.JTextField txtNome4;
     // End of variables declaration//GEN-END:variables
 }
