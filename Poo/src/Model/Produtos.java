@@ -14,16 +14,20 @@ public class Produtos {
     int quantidade;
     String validade;
     String tipo;
+    int idProduto;
 
     public Produtos() {
     }
 
-    public Produtos(String produto, int quantidade, String validade, String tipo) {
+    public Produtos(String produto, int quantidade, String validade, String tipo, int idProduto) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.validade = validade;
         this.tipo = tipo;
+        this.idProduto = idProduto;
     }
+
+    
 
     public String getProduto() {
         return produto;
@@ -55,6 +59,14 @@ public class Produtos {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public int getIdProduto() {
+        return idProduto;
+    }
+
+    public void setIdProduto(int idProduto) {
+        this.idProduto = idProduto;
     }
     
     

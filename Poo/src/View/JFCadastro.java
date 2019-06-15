@@ -333,7 +333,6 @@ public class JFCadastro extends javax.swing.JFrame {
         jPanel3.add(jButton4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 390, 140, 40));
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(810, 550));
         setSize(new java.awt.Dimension(810, 550));
 
         bg.setBackground(new java.awt.Color(36, 47, 65));
@@ -342,7 +341,7 @@ public class JFCadastro extends javax.swing.JFrame {
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         btn_confirmar_cadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_1.png"))); // NOI18N
-        btn_confirmar_cadastro.setText("Cadastrar-se");
+        btn_confirmar_cadastro.setText("Cadastrar");
         btn_confirmar_cadastro.setMaximumSize(new java.awt.Dimension(140, 45));
         btn_confirmar_cadastro.setMinimumSize(new java.awt.Dimension(140, 45));
         btn_confirmar_cadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -652,8 +651,8 @@ public class JFCadastro extends javax.swing.JFrame {
         jSeparator27.setForeground(new java.awt.Color(255, 255, 255));
         bg.add(jSeparator27, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 190, 20));
 
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/Delete_Icon.png"))); // NOI18N
-        jButton2.setText("Candelar");
+        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel.png"))); // NOI18N
+        jButton2.setText("Cancelar");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);

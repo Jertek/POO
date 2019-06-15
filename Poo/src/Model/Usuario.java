@@ -16,7 +16,7 @@ public class Usuario {
     String email;
     String senha;
     String telefone;
-    int id;
+    int idUsuario;
 
     public Usuario() {
     }
@@ -28,7 +28,7 @@ public class Usuario {
         this.email = email;
         this.senha = senha;
         this.telefone = telefone;
-        this.id = id;
+        this.idUsuario = id;
     }
 
     public String getNome() {
@@ -80,11 +80,11 @@ public class Usuario {
     }
 
     public int getId() {
-        return id;
+        return idUsuario;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idUsuario = id;
     }
 
     
