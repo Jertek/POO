@@ -5,6 +5,13 @@
  */
 package View;
 
+import Model.Usuario;
+import Model.UsuarioDAO;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author aluno
@@ -35,16 +42,16 @@ public class JFLogin extends javax.swing.JFrame {
         jSeparator10 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jSeparator12 = new javax.swing.JSeparator();
-        jSeparator13 = new javax.swing.JSeparator();
-        jSeparator14 = new javax.swing.JSeparator();
-        senha = new javax.swing.JPasswordField();
+        lb_nome = new javax.swing.JLabel();
+        lb_Apelido = new javax.swing.JLabel();
+        lb_password = new javax.swing.JLabel();
+        sp_nome = new javax.swing.JSeparator();
+        sp_Apelido = new javax.swing.JSeparator();
+        sp_senha = new javax.swing.JSeparator();
+        txtsenha = new javax.swing.JPasswordField();
         txtApelido = new javax.swing.JTextField();
         txtNome = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        btn_login = new javax.swing.JButton();
         btn_cadastrar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -85,44 +92,44 @@ public class JFLogin extends javax.swing.JFrame {
         jLabel12.setText("Login/Cadastrar");
         jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(560, 100, -1, -1));
 
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel13.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel13.setText("NOME");
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
+        lb_nome.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lb_nome.setForeground(new java.awt.Color(255, 255, 255));
+        lb_nome.setText("NOME");
+        jPanel3.add(lb_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 190, -1, -1));
 
-        jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel14.setText("APELIDO");
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, -1, -1));
+        lb_Apelido.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lb_Apelido.setForeground(new java.awt.Color(255, 255, 255));
+        lb_Apelido.setText("APELIDO");
+        jPanel3.add(lb_Apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 250, -1, -1));
 
-        jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(255, 255, 255));
-        jLabel15.setText("Senha");
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
+        lb_password.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lb_password.setForeground(new java.awt.Color(255, 255, 255));
+        lb_password.setText("Senha");
+        jPanel3.add(lb_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
-        jSeparator12.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(jSeparator12, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 270, 10));
+        sp_nome.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(sp_nome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 240, 270, 10));
 
-        jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 270, 10));
+        sp_Apelido.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(sp_Apelido, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 300, 270, 10));
 
-        jSeparator14.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel3.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 100, 10));
+        sp_senha.setForeground(new java.awt.Color(255, 255, 255));
+        jPanel3.add(sp_senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 350, 100, 10));
 
-        senha.setBackground(new java.awt.Color(36, 47, 65));
-        senha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        senha.setForeground(new java.awt.Color(255, 255, 255));
-        senha.setBorder(null);
-        senha.setMaximumSize(new java.awt.Dimension(1, 1));
-        senha.setPreferredSize(new java.awt.Dimension(1, 1));
-        senha.setSelectionEnd(1);
-        senha.setSelectionStart(1);
-        senha.addActionListener(new java.awt.event.ActionListener() {
+        txtsenha.setBackground(new java.awt.Color(36, 47, 65));
+        txtsenha.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtsenha.setForeground(new java.awt.Color(255, 255, 255));
+        txtsenha.setBorder(null);
+        txtsenha.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtsenha.setPreferredSize(new java.awt.Dimension(1, 1));
+        txtsenha.setSelectionEnd(1);
+        txtsenha.setSelectionStart(1);
+        txtsenha.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                senhaActionPerformed(evt);
+                txtsenhaActionPerformed(evt);
             }
         });
-        jPanel3.add(senha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 100, 20));
+        jPanel3.add(txtsenha, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 100, 20));
 
         txtApelido.setBackground(new java.awt.Color(36, 47, 65));
         txtApelido.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -162,17 +169,17 @@ public class JFLogin extends javax.swing.JFrame {
         });
         jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 270, 20));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/checked.png"))); // NOI18N
-        jButton1.setText("Login");
-        jButton1.setMaximumSize(new java.awt.Dimension(140, 45));
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/checked_32.png"))); // NOI18N
+        btn_login.setText("Login");
+        btn_login.setMaximumSize(new java.awt.Dimension(140, 45));
+        btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btn_loginActionPerformed(evt);
             }
         });
-        jPanel3.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
+        jPanel3.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
 
-        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_1.png"))); // NOI18N
+        btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
         btn_cadastrar.setText("Cadastrar-se");
         btn_cadastrar.setMaximumSize(new java.awt.Dimension(140, 45));
         btn_cadastrar.setMinimumSize(new java.awt.Dimension(140, 45));
@@ -207,9 +214,9 @@ public class JFLogin extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void senhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_senhaActionPerformed
+    private void txtsenhaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtsenhaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_senhaActionPerformed
+    }//GEN-LAST:event_txtsenhaActionPerformed
 
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
         txtNome.setText("");
@@ -227,9 +234,25 @@ public class JFLogin extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtNomeActionPerformed
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btn_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_loginActionPerformed
+        
+        UsuarioDAO  userDao = new UsuarioDAO();
+        try {
+            Usuario user = userDao.Login(txtApelido.getText(),txtsenha.getText());
+            
+            if(user.getId()!= 0){
+                this.setVisible(false);
+                new JFHome().setVisible(true);
+           }else{
+                JOptionPane.showMessageDialog(null, "Login Inválido"+"\n");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(JFLogin.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        
+    }//GEN-LAST:event_btn_loginActionPerformed
 
     private void btn_cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_cadastrarActionPerformed
         this.setVisible(false);
@@ -274,23 +297,23 @@ public class JFLogin extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btn_cadastrar;
-    private javax.swing.JButton jButton1;
+    private javax.swing.JButton btn_login;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JSeparator jSeparator10;
-    private javax.swing.JSeparator jSeparator12;
-    private javax.swing.JSeparator jSeparator13;
-    private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator9;
-    private javax.swing.JPasswordField senha;
+    private javax.swing.JLabel lb_Apelido;
+    private javax.swing.JLabel lb_nome;
+    private javax.swing.JLabel lb_password;
+    private javax.swing.JSeparator sp_Apelido;
+    private javax.swing.JSeparator sp_nome;
+    private javax.swing.JSeparator sp_senha;
     private javax.swing.JTextField txtApelido;
     private javax.swing.JTextField txtNome;
+    private javax.swing.JPasswordField txtsenha;
     // End of variables declaration//GEN-END:variables
 }

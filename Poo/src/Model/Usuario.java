@@ -16,7 +16,7 @@ public class Usuario {
     String email;
     String senha;
     String telefone;
-    int idUsuario;
+    int idUsuario ;
 
     public Usuario() {
     }

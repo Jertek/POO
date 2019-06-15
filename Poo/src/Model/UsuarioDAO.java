@@ -40,7 +40,7 @@ public class UsuarioDAO {
     
     public int Inserir (Usuario usuario) throws SQLException{
         
-        String sql = " Insert into usuario (Nome, Apelido , Telefone, Endereco, Email, Senha, id) values (?,?,?,?,?,?,?)";
+        String sql = " Insert into usuario (Nome, Apelido , Telefone, Endereco, Email, Senha) values (?,?,?,?,?,?)";
         
         stm = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
         stm.setString(1, usuario.getNome());
@@ -87,7 +87,7 @@ public class UsuarioDAO {
         stm.executeUpdate();
     }
     
-    public Usuario localizarVinho(String locUsuario) throws SQLException{
+    public Usuario localizarUsuario(String locUsuario) throws SQLException{
         
         String sql = "Select * from usuario where Nome = ? ";
         
@@ -105,25 +105,30 @@ public class UsuarioDAO {
         return usuario;
     }
     
-    public ArrayList<Usuario> ListaUsuarios () throws SQLException{
+    
+            
+    public Usuario Login(String usuario, String senha) throws SQLException{
        
-        ArrayList<Usuario> usuario = new ArrayList<Usuario>();
+       Usuario user = new Usuario();
         
-        String sql = "Select * From usuario";
+        String sql = "Select * From usuario where Apelido = ? AND Senha = ? " ;
+         stm = con.prepareStatement(sql);
+                
+        stm.setString(1, usuario);
+        stm.setString(2, senha);
         
-        stm = con.prepareStatement(sql);
         rs = stm.executeQuery();
-        
+               
         while(rs.next()){
-             usuario.add(new Usuario(rs.getString(1),
+             user = new Usuario(rs.getString(1),
                                     rs.getString(2),
                                     rs.getString(3),
                                     rs.getString(4),
                                     rs.getString(5),
                                     rs.getString(6),
-                                    rs.getInt(7)));
+                                    rs.getInt(7));
         }
-        return usuario;
+        return user;
     }
     
      

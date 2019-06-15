@@ -22,7 +22,7 @@ public class SmartStockDAO {
     private String driver =  "com.mysql.jdbc.Driver";
     
     //Dados para se conectar no server
-    private String url = "jdb:mysql://localhost:3306/SmartStock";
+    private String url = "jdbc:mysql://localhost:3306/smartstock";
     private String usuario = "root";
     private String senha = "";
     
