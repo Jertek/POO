@@ -13,6 +13,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -165,6 +166,11 @@ public class JFHome extends javax.swing.JFrame {
         btn_editprod.setBackground(new java.awt.Color(253, 203, 110));
         btn_editprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/pencil_64.png"))); // NOI18N
         btn_editprod.setBorder(null);
+        btn_editprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_editprodActionPerformed(evt);
+            }
+        });
         jPanel4.add(btn_editprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
 
         btn_locprod.setBackground(new java.awt.Color(253, 203, 110));
@@ -244,6 +250,18 @@ public class JFHome extends javax.swing.JFrame {
     private void btn_locprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_locprodActionPerformed
        listener.pesquisarprod();
     }//GEN-LAST:event_btn_locprodActionPerformed
+
+    private void btn_editprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_editprodActionPerformed
+        int op = JOptionPane.showConfirmDialog(null, "Tem certeza?", "Cancelar", JOptionPane.YES_NO_OPTION);
+        
+            if (op==0){
+                
+                    this.setVisible(false);
+                    new JFLogin().setVisible(true);
+            }         
+        
+         
+    }//GEN-LAST:event_btn_editprodActionPerformed
 
     /**
      * @param args the command line arguments
