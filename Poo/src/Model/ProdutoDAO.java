@@ -30,13 +30,30 @@ public class ProdutoDAO {
             con = dao.getConnetion();
         }
         
-        catch(SQLException e){
-            
+        catch(SQLException e){           
     }
-    
+   }
+     
+      public ArrayList<Produtos> ListaProdutos () throws SQLException{
+       
+        ArrayList<Produtos> prod = new ArrayList<Produtos>();
         
+        String sql = "Select * From produto";
+        
+        stm = con.prepareStatement(sql);
+        rs = stm.executeQuery();
+        
+        while(rs.next()){
+             prod.add(new Produtos(rs.getString(1),
+                                rs.getString(2),
+                                rs.getString(3),
+                                rs.getString(4),
+                                Integer.parseInt(rs.getString(5))));
+        }
+        return prod;
+    }   
     
-    }
+    
     
     public int Inserir (Produtos produto) throws SQLException{
         
@@ -74,11 +91,11 @@ public class ProdutoDAO {
         stm.executeUpdate();
     }
     
-    public void Excluir (Produtos usuario) throws SQLException{
+    public void Excluir (Produtos prod) throws SQLException{
         
-        String sql = "Delete from usuario where codigo = ?";
+        String sql = "Delete from produto where Idproduto = ?";
         stm = con.prepareStatement(sql);
-        stm.setInt(1,usuario.getIdProduto());
+        stm.setInt(1,prod.getIdProduto());
         stm.executeUpdate();
     }
     
@@ -90,11 +107,16 @@ public class ProdutoDAO {
         stm.setString(1,locProduto);
         rs = stm.executeQuery();
         
-        Produtos produto = new Produtos(rs.getString(1),
+        Produtos prod = new Produtos();
+        while(rs.next()){
+         prod = new Produtos(rs.getString(1),
                                     rs.getString(2),
                                     rs.getString(3),
-                                    rs.getString(4));
-                                    
-        return produto;
+                                    rs.getString(4),
+                                    rs.getInt(1));
+                               
+          }
+        return prod;
     }
+    
 }

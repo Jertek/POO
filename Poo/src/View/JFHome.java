@@ -5,28 +5,100 @@
  */
 package View;
 
+import Control.ControleProd;
 import java.awt.Color;
 import java.awt.Font;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
 
 /**
  *
- * @author jerte
+ * @author jertek
  */
 public class JFHome extends javax.swing.JFrame {
 
-    /**
-     * Creates new form JFProdutos
-     */
-    public JFHome() {
+    
+     
+    private ControleProd listener;
+    
+    public JFHome() throws SQLException {
         initComponents();
         
-        jTable1.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
-        jTable1.getTableHeader().setOpaque(true);
-        jTable1.getTableHeader().setBackground(Color.red);
+        tb_prod_home.getTableHeader().setFont(new Font("Segoe UI", Font.BOLD, 12));
+        tb_prod_home.getTableHeader().setOpaque(true);
+        tb_prod_home.getTableHeader().setBackground(Color.red);
 
-        jTable1.getTableHeader().setForeground(new Color(45, 52, 54));
-        jTable1.setRowHeight(25);
+        tb_prod_home.getTableHeader().setForeground(new Color(45, 52, 54));
+        tb_prod_home.setRowHeight(25);
+        
+        listener = new ControleProd(this);
     }
+
+    public JTable getTb_prod_home() {
+        return tb_prod_home;
+    }
+
+    public void setTb_prod_home(JTable tb_prod_home) {
+        this.tb_prod_home = tb_prod_home;
+    }
+       
+
+    public ControleProd getListener() {
+        return listener;
+    }
+
+    public JButton getBtn_addprod() {
+        return btn_addprod;
+    }
+
+    public JButton getBtn_editprod() {
+        return btn_editprod;
+    }
+
+    public JButton getBtn_locprod() {
+        return btn_locprod;
+    }
+
+    public JButton getBtn_rmvprod() {
+        return btn_rmvprod;
+    }
+
+    public JLabel getjLabel10() {
+        return jLabel10;
+    }
+
+    public JLabel getjLabel11() {
+        return jLabel11;
+    }
+
+    public JLabel getjLabel5() {
+        return jLabel5;
+    }
+
+    public JPanel getjPanel3() {
+        return jPanel3;
+    }
+
+    public JPanel getjPanel4() {
+        return jPanel4;
+    }
+
+    public JPanel getjPanel5() {
+        return jPanel5;
+    }
+
+    public JScrollPane getjScrollPane1() {
+        return jScrollPane1;
+    }
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -47,7 +119,7 @@ public class JFHome extends javax.swing.JFrame {
         btn_locprod = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tb_prod_home = new javax.swing.JTable();
         jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,6 +155,11 @@ public class JFHome extends javax.swing.JFrame {
         btn_rmvprod.setBackground(new java.awt.Color(253, 203, 110));
         btn_rmvprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/remove_64.png"))); // NOI18N
         btn_rmvprod.setBorder(null);
+        btn_rmvprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_rmvprodActionPerformed(evt);
+            }
+        });
         jPanel4.add(btn_rmvprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
 
         btn_editprod.setBackground(new java.awt.Color(253, 203, 110));
@@ -93,6 +170,11 @@ public class JFHome extends javax.swing.JFrame {
         btn_locprod.setBackground(new java.awt.Color(253, 203, 110));
         btn_locprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search_64.png"))); // NOI18N
         btn_locprod.setBorder(null);
+        btn_locprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_locprodActionPerformed(evt);
+            }
+        });
         jPanel4.add(btn_locprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 550));
@@ -100,7 +182,7 @@ public class JFHome extends javax.swing.JFrame {
         jPanel5.setBackground(new java.awt.Color(225, 112, 85));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tb_prod_home.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -108,14 +190,14 @@ public class JFHome extends javax.swing.JFrame {
                 "Produto", "Quantidade", "Validade", "Tipo"
             }
         ));
-        jTable1.setFocusable(false);
-        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(162, 155, 254));
-        jTable1.setSelectionForeground(new java.awt.Color(45, 52, 54));
-        jTable1.setShowHorizontalLines(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tb_prod_home.setFocusable(false);
+        tb_prod_home.setIntercellSpacing(new java.awt.Dimension(0, 0));
+        tb_prod_home.setRowHeight(25);
+        tb_prod_home.setSelectionBackground(new java.awt.Color(162, 155, 254));
+        tb_prod_home.setSelectionForeground(new java.awt.Color(45, 52, 54));
+        tb_prod_home.setShowHorizontalLines(false);
+        tb_prod_home.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tb_prod_home);
 
         jPanel5.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 60, 380, 460));
 
@@ -155,6 +237,14 @@ public class JFHome extends javax.swing.JFrame {
          new JFProdutos().setVisible(true);
     }//GEN-LAST:event_btn_addprodActionPerformed
 
+    private void btn_rmvprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_rmvprodActionPerformed
+      listener.excluirProd();
+    }//GEN-LAST:event_btn_rmvprodActionPerformed
+
+    private void btn_locprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_locprodActionPerformed
+       listener.pesquisarprod();
+    }//GEN-LAST:event_btn_locprodActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -186,7 +276,11 @@ public class JFHome extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new JFHome().setVisible(true);
+                try {
+                    new JFHome().setVisible(true);
+                } catch (SQLException ex) {
+                    Logger.getLogger(JFHome.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
@@ -203,6 +297,6 @@ public class JFHome extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tb_prod_home;
     // End of variables declaration//GEN-END:variables
 }

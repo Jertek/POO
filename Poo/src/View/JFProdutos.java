@@ -8,11 +8,14 @@ package View;
 import Model.ProdutoDAO;
 import Model.Produtos;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JTable;
 
 /**
  *
- * @author jerte
+ * @author jertek
  */
 public class JFProdutos extends javax.swing.JFrame {
 
@@ -22,6 +25,10 @@ public class JFProdutos extends javax.swing.JFrame {
     public JFProdutos() {
         initComponents();
     }
+
+    
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -37,7 +44,6 @@ public class JFProdutos extends javax.swing.JFrame {
         jLabel13 = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         btn_addprod = new javax.swing.JButton();
         btn_voltar = new javax.swing.JButton();
         txtprod = new javax.swing.JTextField();
@@ -52,9 +58,8 @@ public class JFProdutos extends javax.swing.JFrame {
         txttipo = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        lb_logo = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
 
         txtNome.setBackground(new java.awt.Color(36, 47, 65));
         txtNome.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
@@ -96,11 +101,6 @@ public class JFProdutos extends javax.swing.JFrame {
 
         jPanel4.setBackground(new java.awt.Color(253, 203, 110));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel11.setText("Smart Stock");
-        jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
         btn_addprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
         btn_addprod.setText("Adicionar Produto");
@@ -258,29 +258,15 @@ public class JFProdutos extends javax.swing.JFrame {
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 550));
 
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 0, 18)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel12.setText("Produtos");
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 30, -1, 30));
+        lb_logo.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
+        lb_logo.setForeground(new java.awt.Color(204, 204, 204));
+        lb_logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/diet.png"))); // NOI18N
+        jPanel3.add(lb_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Produto", "Quantidade", "Validade", "Tipo"
-            }
-        ));
-        jTable1.setFocusable(false);
-        jTable1.setIntercellSpacing(new java.awt.Dimension(0, 0));
-        jTable1.setRowHeight(25);
-        jTable1.setSelectionBackground(new java.awt.Color(162, 155, 254));
-        jTable1.setSelectionForeground(new java.awt.Color(45, 52, 54));
-        jTable1.setShowHorizontalLines(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
-
-        jPanel3.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 70, 380, 460));
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel11.setText("Smart Stock");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -298,7 +284,11 @@ public class JFProdutos extends javax.swing.JFrame {
 
     private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
         this.setVisible(false);
-         new JFHome().setVisible(true);
+        try {
+            new JFHome().setVisible(true);
+        } catch (SQLException ex) {
+            Logger.getLogger(JFProdutos.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_btn_voltarActionPerformed
 
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
@@ -419,7 +409,6 @@ public class JFProdutos extends javax.swing.JFrame {
     private javax.swing.JButton btn_addprod;
     private javax.swing.JButton btn_voltar;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
@@ -427,13 +416,12 @@ public class JFProdutos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator12;
     private javax.swing.JSeparator jSeparator13;
     private javax.swing.JSeparator jSeparator14;
     private javax.swing.JSeparator jSeparator15;
     private javax.swing.JSeparator jSeparator16;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lb_logo;
     private javax.swing.JTextField txtNome;
     private javax.swing.JTextField txtprod;
     private javax.swing.JTextField txtqtd;
