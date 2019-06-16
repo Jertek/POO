@@ -5,6 +5,11 @@
  */
 package View;
 
+import Model.ProdutoDAO;
+import Model.Produtos;
+import java.sql.SQLException;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author jerte
@@ -33,18 +38,18 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         jPanel4 = new javax.swing.JPanel();
         jLabel11 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        txtNome1 = new javax.swing.JTextField();
+        btn_addprod = new javax.swing.JButton();
+        btn_voltar = new javax.swing.JButton();
+        txtprod = new javax.swing.JTextField();
         jSeparator13 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
-        txtNome2 = new javax.swing.JTextField();
+        txtqtd = new javax.swing.JTextField();
         jSeparator14 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        txtNome3 = new javax.swing.JTextField();
+        txtval = new javax.swing.JTextField();
         jSeparator15 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
-        txtNome4 = new javax.swing.JTextField();
+        txttipo = new javax.swing.JTextField();
         jSeparator16 = new javax.swing.JSeparator();
         jLabel17 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
@@ -97,44 +102,49 @@ public class JFProdutos extends javax.swing.JFrame {
         jLabel11.setText("Smart Stock");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 70, -1, -1));
 
-        jButton1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
-        jButton1.setText("Adicionar Produto");
-        jPanel4.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
-
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel_32.png"))); // NOI18N
-        jButton2.setText("Candelar");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btn_addprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
+        btn_addprod.setText("Adicionar Produto");
+        btn_addprod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btn_addprodActionPerformed(evt);
             }
         });
-        jPanel4.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
+        jPanel4.add(btn_addprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
-        txtNome1.setBackground(new java.awt.Color(36, 47, 65));
-        txtNome1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtNome1.setForeground(new java.awt.Color(204, 204, 204));
-        txtNome1.setText("Digite o Nome do produto");
-        txtNome1.setBorder(null);
-        txtNome1.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNome1.setFocusCycleRoot(true);
-        txtNome1.setMaximumSize(new java.awt.Dimension(1, 1));
-        txtNome1.setMinimumSize(new java.awt.Dimension(1, 1));
-        txtNome1.addMouseListener(new java.awt.event.MouseAdapter() {
+        btn_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel_32.png"))); // NOI18N
+        btn_voltar.setText("Candelar");
+        btn_voltar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_voltarActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btn_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
+
+        txtprod.setBackground(new java.awt.Color(36, 47, 65));
+        txtprod.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtprod.setForeground(new java.awt.Color(204, 204, 204));
+        txtprod.setText("Digite o Nome do produto");
+        txtprod.setBorder(null);
+        txtprod.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtprod.setFocusCycleRoot(true);
+        txtprod.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtprod.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtprod.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNome1MouseClicked(evt);
+                txtprodMouseClicked(evt);
             }
         });
-        txtNome1.addActionListener(new java.awt.event.ActionListener() {
+        txtprod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome1ActionPerformed(evt);
+                txtprodActionPerformed(evt);
             }
         });
-        txtNome1.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtprod.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNome1KeyPressed(evt);
+                txtprodKeyPressed(evt);
             }
         });
-        jPanel4.add(txtNome1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, 20));
+        jPanel4.add(txtprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, 20));
 
         jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 270, 10));
@@ -144,31 +154,31 @@ public class JFProdutos extends javax.swing.JFrame {
         jLabel14.setText("Produto");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        txtNome2.setBackground(new java.awt.Color(36, 47, 65));
-        txtNome2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtNome2.setForeground(new java.awt.Color(204, 204, 204));
-        txtNome2.setText("Digite a quantidade");
-        txtNome2.setBorder(null);
-        txtNome2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNome2.setFocusCycleRoot(true);
-        txtNome2.setMaximumSize(new java.awt.Dimension(1, 1));
-        txtNome2.setMinimumSize(new java.awt.Dimension(1, 1));
-        txtNome2.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtqtd.setBackground(new java.awt.Color(36, 47, 65));
+        txtqtd.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtqtd.setForeground(new java.awt.Color(204, 204, 204));
+        txtqtd.setText("Digite a quantidade");
+        txtqtd.setBorder(null);
+        txtqtd.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtqtd.setFocusCycleRoot(true);
+        txtqtd.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtqtd.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtqtd.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNome2MouseClicked(evt);
+                txtqtdMouseClicked(evt);
             }
         });
-        txtNome2.addActionListener(new java.awt.event.ActionListener() {
+        txtqtd.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome2ActionPerformed(evt);
+                txtqtdActionPerformed(evt);
             }
         });
-        txtNome2.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtqtd.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNome2KeyPressed(evt);
+                txtqtdKeyPressed(evt);
             }
         });
-        jPanel4.add(txtNome2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 270, 20));
+        jPanel4.add(txtqtd, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 270, 20));
 
         jSeparator14.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 270, 10));
@@ -178,31 +188,31 @@ public class JFProdutos extends javax.swing.JFrame {
         jLabel15.setText("Quantidade");
         jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
-        txtNome3.setBackground(new java.awt.Color(36, 47, 65));
-        txtNome3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtNome3.setForeground(new java.awt.Color(204, 204, 204));
-        txtNome3.setText("Digite a validade");
-        txtNome3.setBorder(null);
-        txtNome3.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNome3.setFocusCycleRoot(true);
-        txtNome3.setMaximumSize(new java.awt.Dimension(1, 1));
-        txtNome3.setMinimumSize(new java.awt.Dimension(1, 1));
-        txtNome3.addMouseListener(new java.awt.event.MouseAdapter() {
+        txtval.setBackground(new java.awt.Color(36, 47, 65));
+        txtval.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtval.setForeground(new java.awt.Color(204, 204, 204));
+        txtval.setText("Digite a validade");
+        txtval.setBorder(null);
+        txtval.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtval.setFocusCycleRoot(true);
+        txtval.setMaximumSize(new java.awt.Dimension(1, 1));
+        txtval.setMinimumSize(new java.awt.Dimension(1, 1));
+        txtval.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNome3MouseClicked(evt);
+                txtvalMouseClicked(evt);
             }
         });
-        txtNome3.addActionListener(new java.awt.event.ActionListener() {
+        txtval.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome3ActionPerformed(evt);
+                txtvalActionPerformed(evt);
             }
         });
-        txtNome3.addKeyListener(new java.awt.event.KeyAdapter() {
+        txtval.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNome3KeyPressed(evt);
+                txtvalKeyPressed(evt);
             }
         });
-        jPanel4.add(txtNome3, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 270, 20));
+        jPanel4.add(txtval, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 320, 270, 20));
 
         jSeparator15.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 270, 10));
@@ -212,31 +222,31 @@ public class JFProdutos extends javax.swing.JFrame {
         jLabel16.setText("Validade");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        txtNome4.setBackground(new java.awt.Color(36, 47, 65));
-        txtNome4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtNome4.setForeground(new java.awt.Color(204, 204, 204));
-        txtNome4.setText("Digite o tipo de produto");
-        txtNome4.setBorder(null);
-        txtNome4.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        txtNome4.setFocusCycleRoot(true);
-        txtNome4.setMaximumSize(new java.awt.Dimension(1, 1));
-        txtNome4.setMinimumSize(new java.awt.Dimension(1, 1));
-        txtNome4.addMouseListener(new java.awt.event.MouseAdapter() {
+        txttipo.setBackground(new java.awt.Color(36, 47, 65));
+        txttipo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txttipo.setForeground(new java.awt.Color(204, 204, 204));
+        txttipo.setText("Digite o tipo de produto");
+        txttipo.setBorder(null);
+        txttipo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txttipo.setFocusCycleRoot(true);
+        txttipo.setMaximumSize(new java.awt.Dimension(1, 1));
+        txttipo.setMinimumSize(new java.awt.Dimension(1, 1));
+        txttipo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                txtNome4MouseClicked(evt);
+                txttipoMouseClicked(evt);
             }
         });
-        txtNome4.addActionListener(new java.awt.event.ActionListener() {
+        txttipo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtNome4ActionPerformed(evt);
+                txttipoActionPerformed(evt);
             }
         });
-        txtNome4.addKeyListener(new java.awt.event.KeyAdapter() {
+        txttipo.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
-                txtNome4KeyPressed(evt);
+                txttipoKeyPressed(evt);
             }
         });
-        jPanel4.add(txtNome4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 270, 20));
+        jPanel4.add(txttipo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 380, 270, 20));
 
         jSeparator16.setForeground(new java.awt.Color(255, 255, 255));
         jPanel4.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 270, 10));
@@ -286,9 +296,10 @@ public class JFProdutos extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btn_voltarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_voltarActionPerformed
+        this.setVisible(false);
+         new JFHome().setVisible(true);
+    }//GEN-LAST:event_btn_voltarActionPerformed
 
     private void txtNomeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNomeMouseClicked
         txtNome.setText("");
@@ -302,53 +313,72 @@ public class JFProdutos extends javax.swing.JFrame {
 
     }//GEN-LAST:event_txtNomeKeyPressed
 
-    private void txtNome1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome1MouseClicked
-        txtNome.setText("");
-    }//GEN-LAST:event_txtNome1MouseClicked
+    private void txtprodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtprodMouseClicked
+        txtprod.setText("");
+    }//GEN-LAST:event_txtprodMouseClicked
 
-    private void txtNome1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome1ActionPerformed
+    private void txtprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtprodActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome1ActionPerformed
+    }//GEN-LAST:event_txtprodActionPerformed
 
-    private void txtNome1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome1KeyPressed
+    private void txtprodKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtprodKeyPressed
 
-    }//GEN-LAST:event_txtNome1KeyPressed
+    }//GEN-LAST:event_txtprodKeyPressed
 
-    private void txtNome2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome2MouseClicked
-        txtNome.setText("");
-    }//GEN-LAST:event_txtNome2MouseClicked
+    private void txtqtdMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtqtdMouseClicked
+        txtqtd.setText("");
+    }//GEN-LAST:event_txtqtdMouseClicked
 
-    private void txtNome2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome2ActionPerformed
+    private void txtqtdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtqtdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome2ActionPerformed
+    }//GEN-LAST:event_txtqtdActionPerformed
 
-    private void txtNome2KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome2KeyPressed
+    private void txtqtdKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtqtdKeyPressed
 
-    }//GEN-LAST:event_txtNome2KeyPressed
+    }//GEN-LAST:event_txtqtdKeyPressed
 
-    private void txtNome3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome3MouseClicked
-        txtNome.setText("");
-    }//GEN-LAST:event_txtNome3MouseClicked
+    private void txtvalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtvalMouseClicked
+        txtval.setText("");
+    }//GEN-LAST:event_txtvalMouseClicked
 
-    private void txtNome3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome3ActionPerformed
+    private void txtvalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtvalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome3ActionPerformed
+    }//GEN-LAST:event_txtvalActionPerformed
 
-    private void txtNome3KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome3KeyPressed
+    private void txtvalKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtvalKeyPressed
 
-    }//GEN-LAST:event_txtNome3KeyPressed
+    }//GEN-LAST:event_txtvalKeyPressed
 
-    private void txtNome4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txtNome4MouseClicked
-        txtNome.setText("");
-    }//GEN-LAST:event_txtNome4MouseClicked
+    private void txttipoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_txttipoMouseClicked
+        txttipo.setText("");
+    }//GEN-LAST:event_txttipoMouseClicked
 
-    private void txtNome4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNome4ActionPerformed
+    private void txttipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txttipoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtNome4ActionPerformed
+    }//GEN-LAST:event_txttipoActionPerformed
 
-    private void txtNome4KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNome4KeyPressed
+    private void txttipoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txttipoKeyPressed
 
-    }//GEN-LAST:event_txtNome4KeyPressed
+    }//GEN-LAST:event_txttipoKeyPressed
+
+    private void btn_addprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addprodActionPerformed
+         
+            Produtos prod = new Produtos();
+        prod.setProduto(txtprod.getText());
+        prod.setQuantidade(txtqtd.getText());
+        prod.setValidade(txtval.getText());
+        prod.setTipo(txttipo.getText());
+        
+        
+        ProdutoDAO prodDao = new ProdutoDAO();
+            try {
+                prodDao.Inserir(prod);
+                JOptionPane.showMessageDialog(null, txtprod.getText()+" inserido com Sucesso!");
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, "Erro no Banco de dados"+"\n"+ex);
+            }
+        
+    }//GEN-LAST:event_btn_addprodActionPerformed
 
     /**
      * @param args the command line arguments
@@ -386,8 +416,8 @@ public class JFProdutos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton btn_addprod;
+    private javax.swing.JButton btn_voltar;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
@@ -405,9 +435,9 @@ public class JFProdutos extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator16;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtNome1;
-    private javax.swing.JTextField txtNome2;
-    private javax.swing.JTextField txtNome3;
-    private javax.swing.JTextField txtNome4;
+    private javax.swing.JTextField txtprod;
+    private javax.swing.JTextField txtqtd;
+    private javax.swing.JTextField txttipo;
+    private javax.swing.JTextField txtval;
     // End of variables declaration//GEN-END:variables
 }

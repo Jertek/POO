@@ -11,7 +11,7 @@ package Model;
  */
 public class Produtos {
     String produto;
-    int quantidade;
+    String quantidade;
     String validade;
     String tipo;
     int idProduto;
@@ -19,12 +19,19 @@ public class Produtos {
     public Produtos() {
     }
 
-    public Produtos(String produto, int quantidade, String validade, String tipo, int idProduto) {
+    public Produtos(String produto, String quantidade, String validade, String tipo, int idProduto) {
         this.produto = produto;
         this.quantidade = quantidade;
         this.validade = validade;
         this.tipo = tipo;
         this.idProduto = idProduto;
+    }
+
+    public Produtos(String produto, String quantidade, String validade, String tipo) {
+        this.produto = produto;
+        this.quantidade = quantidade;
+        this.validade = validade;
+        this.tipo = tipo;
     }
 
     
@@ -37,11 +44,11 @@ public class Produtos {
         this.produto = produto;
     }
 
-    public int getQuantidade() {
+    public String getQuantidade() {
         return quantidade;
     }
 
-    public void setQuantidade(int quantidade) {
+    public void setQuantidade(String quantidade) {
         this.quantidade = quantidade;
     }
 

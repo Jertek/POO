@@ -41,12 +41,10 @@ public class JFHome extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jPanel1 = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        jPanel2 = new javax.swing.JPanel();
+        btn_addprod = new javax.swing.JButton();
+        btn_rmvprod = new javax.swing.JButton();
+        btn_editprod = new javax.swing.JButton();
+        btn_locprod = new javax.swing.JButton();
         jPanel5 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -72,47 +70,30 @@ public class JFHome extends javax.swing.JFrame {
         jLabel11.setText("Smart Stock");
         jPanel4.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 140, 30));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_64.png"))); // NOI18N
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 450, -1, -1));
+        btn_addprod.setBackground(new java.awt.Color(253, 203, 110));
+        btn_addprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_64.png"))); // NOI18N
+        btn_addprod.setBorder(null);
+        btn_addprod.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btn_addprodActionPerformed(evt);
+            }
+        });
+        jPanel4.add(btn_addprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 460, -1, -1));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/remove_64.png"))); // NOI18N
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 450, -1, -1));
+        btn_rmvprod.setBackground(new java.awt.Color(253, 203, 110));
+        btn_rmvprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/remove_64.png"))); // NOI18N
+        btn_rmvprod.setBorder(null);
+        jPanel4.add(btn_rmvprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 460, -1, -1));
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/pencil_64.png"))); // NOI18N
-        jPanel4.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 450, -1, -1));
+        btn_editprod.setBackground(new java.awt.Color(253, 203, 110));
+        btn_editprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/pencil_64.png"))); // NOI18N
+        btn_editprod.setBorder(null);
+        jPanel4.add(btn_editprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 460, -1, -1));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 40, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 40, 40));
-
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/eye-button_64.png"))); // NOI18N
-        jPanel4.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 450, -1, -1));
-
-        jPanel2.setBackground(new java.awt.Color(255, 255, 255));
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 50, Short.MAX_VALUE)
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 30, Short.MAX_VALUE)
-        );
-
-        jPanel4.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 470, 50, 30));
+        btn_locprod.setBackground(new java.awt.Color(253, 203, 110));
+        btn_locprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/search_64.png"))); // NOI18N
+        btn_locprod.setBorder(null);
+        jPanel4.add(btn_locprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 460, -1, -1));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 410, 550));
 
@@ -169,6 +150,11 @@ public class JFHome extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void btn_addprodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btn_addprodActionPerformed
+        this.setVisible(false);
+         new JFProdutos().setVisible(true);
+    }//GEN-LAST:event_btn_addprodActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -206,15 +192,13 @@ public class JFHome extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.JButton btn_addprod;
+    private javax.swing.JButton btn_editprod;
+    private javax.swing.JButton btn_locprod;
+    private javax.swing.JButton btn_rmvprod;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;

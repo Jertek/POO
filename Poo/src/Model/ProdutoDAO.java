@@ -38,98 +38,63 @@ public class ProdutoDAO {
     
     }
     
-    public int Inserir (Usuario produto) throws SQLException{
+    public int Inserir (Produtos produto) throws SQLException{
         
-        String sql = " Insert into produto (Nome, Apelido , Telefone, Endereco, Email, Senha) values (?,?,?,?,?,?)";
+        String sql = " Insert into produto (produto, quantidade , validade, tipo) values (?,?,?,?)";
         
         stm = con.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-        stm.setString(1, produto.getNome());
-        stm.setString(2, produto.getApelido());
-        stm.setString(3, produto.getTelefone());
-        stm.setString(4, produto.getEndereco());
-        
-        
-        
-        
+        stm.setString(1, produto.getProduto());
+        stm.setString(2, produto.getQuantidade());
+        stm.setString(3, produto.getValidade());
+        stm.setString(4, produto.getTipo());
+                 
+               
         stm.executeUpdate();
         
         rs = stm.getGeneratedKeys();
         
         //atualiza o atributo codigo (autoincremento) do objeto instanciado
         if(rs.next()){
-            produto.setId(rs.getInt(1));
+            produto.setIdProduto(rs.getInt(1));
         }
         
-        return produto.getId();
+        return produto.getIdProduto();
     }
     
-    public void Alterar (Usuario produto) throws SQLException{
-        String sql = "Update usuario set nome=?, Apelido=?,Telefone = ?, Endereco=?, Email=?, Senha = ?, id =?   where codigo=?";
-        
+    public void Alterar (Produtos produto) throws SQLException{
+        String sql = "Update produto set Produto=?, Quantidade=?, Validade = ?, Tipo=?";
+         
         stm = con.prepareStatement(sql);
-        
-        stm.setString(1, produto.getNome());
-        stm.setString(2, produto.getApelido());
-        stm.setString(3, produto.getTelefone());
-        stm.setString(4, produto.getEndereco());
-        
+        stm.setString(1, produto.getProduto());
+        stm.setString(2, produto.getQuantidade());
+        stm.setString(3, produto.getValidade());
+        stm.setString(4, produto.getTipo());
+                       
         
         stm.executeUpdate();
     }
     
-    public void Excluir (Usuario usuario) throws SQLException{
+    public void Excluir (Produtos usuario) throws SQLException{
         
         String sql = "Delete from usuario where codigo = ?";
         stm = con.prepareStatement(sql);
-        stm.setInt(1,usuario.getId());
+        stm.setInt(1,usuario.getIdProduto());
         stm.executeUpdate();
     }
     
-    public Usuario localizarUsuario(String locUsuario) throws SQLException{
+    public Produtos localizarProduto(String locProduto) throws SQLException{
         
-        String sql = "Select * from usuario where Nome = ? ";
+        String sql = "Select * from produto where Produto = ? ";
         
         stm = con.prepareStatement(sql);
-        stm.setString(1,locUsuario);
+        stm.setString(1,locProduto);
         rs = stm.executeQuery();
         
-        Usuario usuario = new Usuario(rs.getString(1),
+        Produtos produto = new Produtos(rs.getString(1),
                                     rs.getString(2),
                                     rs.getString(3),
-                                    rs.getString(4),
-                                    rs.getString(5),
-                                    rs.getString(6),
-                                    rs.getInt(7));
-        return usuario;
+                                    rs.getString(4));
+                                    
+        return produto;
     }
-    
-    
-            
-    public Usuario Login(String usuario, String senha) throws SQLException{
-       
-       Usuario user = new Usuario();
-        
-        String sql = "Select * From usuario where Apelido = ? AND Senha = ? " ;
-         stm = con.prepareStatement(sql);
-                
-        stm.setString(1, usuario);
-        stm.setString(2, senha);
-        
-        rs = stm.executeQuery();
-               
-        while(rs.next()){
-             user = new Usuario(rs.getString(1),
-                                    rs.getString(2),
-                                    rs.getString(3),
-                                    rs.getString(4),
-                                    rs.getString(5),
-                                    rs.getString(6),
-                                    rs.getInt(7));
-        }
-        return user;
-    }
-    
-     
-
-
 }
