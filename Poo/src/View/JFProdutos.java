@@ -66,7 +66,7 @@ public class JFProdutos extends javax.swing.JFrame {
         txtNome.setForeground(new java.awt.Color(204, 204, 204));
         txtNome.setText("Digite Seu Nome");
         txtNome.setBorder(null);
-        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtNome.setFocusCycleRoot(true);
         txtNome.setMaximumSize(new java.awt.Dimension(1, 1));
         txtNome.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -102,8 +102,10 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel4.setBackground(new java.awt.Color(253, 203, 110));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_addprod.setBackground(new java.awt.Color(253, 203, 110));
         btn_addprod.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
         btn_addprod.setText("Adicionar Produto");
+        btn_addprod.setBorder(null);
         btn_addprod.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_addprodActionPerformed(evt);
@@ -111,8 +113,10 @@ public class JFProdutos extends javax.swing.JFrame {
         });
         jPanel4.add(btn_addprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 470, -1, -1));
 
+        btn_voltar.setBackground(new java.awt.Color(253, 203, 110));
         btn_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel_32.png"))); // NOI18N
         btn_voltar.setText("Candelar");
+        btn_voltar.setBorder(null);
         btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_voltarActionPerformed(evt);
@@ -120,12 +124,12 @@ public class JFProdutos extends javax.swing.JFrame {
         });
         jPanel4.add(btn_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(230, 470, -1, -1));
 
-        txtprod.setBackground(new java.awt.Color(36, 47, 65));
+        txtprod.setBackground(new java.awt.Color(253, 203, 110));
         txtprod.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtprod.setForeground(new java.awt.Color(204, 204, 204));
+        txtprod.setForeground(new java.awt.Color(51, 51, 51));
         txtprod.setText("Digite o Nome do produto");
         txtprod.setBorder(null);
-        txtprod.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtprod.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtprod.setFocusCycleRoot(true);
         txtprod.setMaximumSize(new java.awt.Dimension(1, 1));
         txtprod.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -144,22 +148,21 @@ public class JFProdutos extends javax.swing.JFrame {
                 txtprodKeyPressed(evt);
             }
         });
-        jPanel4.add(txtprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 190, 270, 20));
+        jPanel4.add(txtprod, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 200, 270, 20));
 
         jSeparator13.setForeground(new java.awt.Color(255, 255, 255));
-        jPanel4.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 270, 10));
+        jPanel4.add(jSeparator13, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 270, 10));
 
         jLabel14.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(0, 0, 0));
         jLabel14.setText("Produto");
         jPanel4.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, -1, -1));
 
-        txtqtd.setBackground(new java.awt.Color(36, 47, 65));
+        txtqtd.setBackground(new java.awt.Color(253, 203, 110));
         txtqtd.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtqtd.setForeground(new java.awt.Color(204, 204, 204));
+        txtqtd.setForeground(new java.awt.Color(51, 51, 51));
         txtqtd.setText("Digite a quantidade");
         txtqtd.setBorder(null);
-        txtqtd.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtqtd.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtqtd.setFocusCycleRoot(true);
         txtqtd.setMaximumSize(new java.awt.Dimension(1, 1));
         txtqtd.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -184,16 +187,15 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel4.add(jSeparator14, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 270, 10));
 
         jLabel15.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel15.setForeground(new java.awt.Color(0, 0, 0));
         jLabel15.setText("Quantidade");
         jPanel4.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 240, -1, -1));
 
-        txtval.setBackground(new java.awt.Color(36, 47, 65));
+        txtval.setBackground(new java.awt.Color(253, 203, 110));
         txtval.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txtval.setForeground(new java.awt.Color(204, 204, 204));
+        txtval.setForeground(new java.awt.Color(51, 51, 51));
         txtval.setText("Digite a validade");
         txtval.setBorder(null);
-        txtval.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtval.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtval.setFocusCycleRoot(true);
         txtval.setMaximumSize(new java.awt.Dimension(1, 1));
         txtval.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -218,16 +220,15 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel4.add(jSeparator15, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 270, 10));
 
         jLabel16.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(0, 0, 0));
         jLabel16.setText("Validade");
         jPanel4.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, -1, -1));
 
-        txttipo.setBackground(new java.awt.Color(36, 47, 65));
+        txttipo.setBackground(new java.awt.Color(253, 203, 110));
         txttipo.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        txttipo.setForeground(new java.awt.Color(204, 204, 204));
+        txttipo.setForeground(new java.awt.Color(51, 51, 51));
         txttipo.setText("Digite o tipo de produto");
         txttipo.setBorder(null);
-        txttipo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txttipo.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txttipo.setFocusCycleRoot(true);
         txttipo.setMaximumSize(new java.awt.Dimension(1, 1));
         txttipo.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -252,7 +253,6 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel4.add(jSeparator16, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 400, 270, 10));
 
         jLabel17.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
         jLabel17.setText("Tipo");
         jPanel4.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, -1, -1));
 
@@ -264,7 +264,6 @@ public class JFProdutos extends javax.swing.JFrame {
         jPanel3.add(lb_logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 180, -1, -1));
 
         jLabel11.setFont(new java.awt.Font("Century Gothic", 0, 36)); // NOI18N
-        jLabel11.setForeground(new java.awt.Color(0, 0, 0));
         jLabel11.setText("Smart Stock");
         jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, -1, -1));
 

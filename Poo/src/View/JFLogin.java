@@ -104,7 +104,7 @@ public class JFLogin extends javax.swing.JFrame {
 
         lb_password.setFont(new java.awt.Font("Century Gothic", 0, 14)); // NOI18N
         lb_password.setForeground(new java.awt.Color(255, 255, 255));
-        lb_password.setText("Senha");
+        lb_password.setText("SENHA");
         jPanel3.add(lb_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 310, -1, -1));
 
         sp_nome.setForeground(new java.awt.Color(255, 255, 255));
@@ -148,7 +148,7 @@ public class JFLogin extends javax.swing.JFrame {
         txtNome.setForeground(new java.awt.Color(204, 204, 204));
         txtNome.setText("Digite Seu Nome");
         txtNome.setBorder(null);
-        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtNome.setFocusCycleRoot(true);
         txtNome.setMaximumSize(new java.awt.Dimension(1, 1));
         txtNome.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -169,8 +169,11 @@ public class JFLogin extends javax.swing.JFrame {
         });
         jPanel3.add(txtNome, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 220, 270, 20));
 
+        btn_login.setBackground(new java.awt.Color(36, 47, 65));
+        btn_login.setForeground(new java.awt.Color(255, 255, 255));
         btn_login.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/checked_32.png"))); // NOI18N
-        btn_login.setText("Login");
+        btn_login.setText(" Login");
+        btn_login.setBorder(null);
         btn_login.setMaximumSize(new java.awt.Dimension(140, 45));
         btn_login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,8 +182,11 @@ public class JFLogin extends javax.swing.JFrame {
         });
         jPanel3.add(btn_login, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 390, 140, 40));
 
+        btn_cadastrar.setBackground(new java.awt.Color(36, 47, 65));
+        btn_cadastrar.setForeground(new java.awt.Color(255, 255, 255));
         btn_cadastrar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
-        btn_cadastrar.setText("Cadastrar-se");
+        btn_cadastrar.setText(" Cadastrar-se");
+        btn_cadastrar.setBorder(null);
         btn_cadastrar.setMaximumSize(new java.awt.Dimension(140, 45));
         btn_cadastrar.setMinimumSize(new java.awt.Dimension(140, 45));
         btn_cadastrar.addActionListener(new java.awt.event.ActionListener() {

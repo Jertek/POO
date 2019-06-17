@@ -74,8 +74,11 @@ public class JFCadastro extends javax.swing.JFrame {
         bg.setPreferredSize(new java.awt.Dimension(810, 550));
         bg.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btn_confirmar_cadastro.setBackground(new java.awt.Color(36, 47, 65));
+        btn_confirmar_cadastro.setForeground(new java.awt.Color(255, 255, 255));
         btn_confirmar_cadastro.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/plus_32.png"))); // NOI18N
         btn_confirmar_cadastro.setText("Cadastrar");
+        btn_confirmar_cadastro.setBorder(null);
         btn_confirmar_cadastro.setMaximumSize(new java.awt.Dimension(140, 45));
         btn_confirmar_cadastro.setMinimumSize(new java.awt.Dimension(140, 45));
         btn_confirmar_cadastro.addActionListener(new java.awt.event.ActionListener() {
@@ -83,7 +86,7 @@ public class JFCadastro extends javax.swing.JFrame {
                 btn_confirmar_cadastroActionPerformed(evt);
             }
         });
-        bg.add(btn_confirmar_cadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 450, 140, 40));
+        bg.add(btn_confirmar_cadastro, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 450, 140, -1));
 
         jPanel8.setBackground(new java.awt.Color(1, 163, 164));
         jPanel8.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -116,7 +119,7 @@ public class JFCadastro extends javax.swing.JFrame {
         txtApelido.setForeground(new java.awt.Color(204, 204, 204));
         txtApelido.setText("Digite Seu Apelido");
         txtApelido.setBorder(null);
-        txtApelido.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtApelido.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtApelido.setFocusCycleRoot(true);
         txtApelido.setMaximumSize(new java.awt.Dimension(1, 1));
         txtApelido.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -147,7 +150,7 @@ public class JFCadastro extends javax.swing.JFrame {
         txtNome.setForeground(new java.awt.Color(204, 204, 204));
         txtNome.setText("Digite Seu Nome");
         txtNome.setBorder(null);
-        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNome.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtNome.setFocusCycleRoot(true);
         txtNome.setMaximumSize(new java.awt.Dimension(1, 1));
         txtNome.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -189,7 +192,7 @@ public class JFCadastro extends javax.swing.JFrame {
         txtTelefone.setForeground(new java.awt.Color(204, 204, 204));
         txtTelefone.setText("Digite Seu Telefone");
         txtTelefone.setBorder(null);
-        txtTelefone.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtTelefone.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtTelefone.setFocusCycleRoot(true);
         txtTelefone.setMaximumSize(new java.awt.Dimension(1, 1));
         txtTelefone.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -223,7 +226,7 @@ public class JFCadastro extends javax.swing.JFrame {
         txtEndereco.setForeground(new java.awt.Color(204, 204, 204));
         txtEndereco.setText("Digite Seu Endereço");
         txtEndereco.setBorder(null);
-        txtEndereco.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtEndereco.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtEndereco.setFocusCycleRoot(true);
         txtEndereco.setMaximumSize(new java.awt.Dimension(1, 1));
         txtEndereco.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -257,7 +260,7 @@ public class JFCadastro extends javax.swing.JFrame {
         txtEmail.setForeground(new java.awt.Color(204, 204, 204));
         txtEmail.setText("Digite Seu E-mail");
         txtEmail.setBorder(null);
-        txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtEmail.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         txtEmail.setFocusCycleRoot(true);
         txtEmail.setMaximumSize(new java.awt.Dimension(1, 1));
         txtEmail.setMinimumSize(new java.awt.Dimension(1, 1));
@@ -302,16 +305,25 @@ public class JFCadastro extends javax.swing.JFrame {
         sp_cf_password.setForeground(new java.awt.Color(255, 255, 255));
         bg.add(sp_cf_password, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 390, 190, 20));
 
+        btn_voltar.setBackground(new java.awt.Color(36, 47, 65));
+        btn_voltar.setForeground(new java.awt.Color(255, 255, 255));
         btn_voltar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Image/cancel_32.png"))); // NOI18N
         btn_voltar.setText("Cancelar");
+        btn_voltar.setBorder(null);
         btn_voltar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btn_voltarActionPerformed(evt);
             }
         });
-        bg.add(btn_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 450, 130, -1));
-        bg.add(txtCfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 370, 180, -1));
-        bg.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 330, 180, -1));
+        bg.add(btn_voltar, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 450, 130, -1));
+
+        txtCfPassword.setBackground(new java.awt.Color(36, 47, 65));
+        txtCfPassword.setBorder(null);
+        bg.add(txtCfPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 380, 190, -1));
+
+        txtPassword.setBackground(new java.awt.Color(36, 47, 65));
+        txtPassword.setBorder(null);
+        bg.add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 340, 190, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
